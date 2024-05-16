@@ -116,13 +116,11 @@ public class WeatherController {
 	 * @return
 	 */
 	public String persistTemperature(int hour, double temperature) {
+		// sleep a while to simulate a delay
+		sleep(1 + new Random().nextInt(2));
 		SimpleDateFormat sdf = new SimpleDateFormat("H:m:s");
 		String savedTime = sdf.format(new Date());
 		System.out.println("Temperature: " + temperature + " of hour: " + hour + ", saved at " + savedTime);
-		
-		// sleep a while to simulate a delay
-		sleep(1 + new Random().nextInt(2));
-		
 		return savedTime;
 	}
 	
